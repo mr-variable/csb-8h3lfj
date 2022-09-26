@@ -15,8 +15,9 @@
   /* --background-image: linear-gradient(90deg,#21D4FD, #B721FF); */
   /* --background-image:url("background_image/2725544.jpg"); */
   /* triend all the above gradients, finally liked the gradient vectored image */
-  --background-image: url(files/background_image/polygons.jpg);
-  --music-themes-background-image: url(files/background_image/329327.jpg);
+  /* --background-image: url(files/background_image/polygons.jpg); */
+  --background-image: url(files/background_image/25629.jpg);
+  --music-themes-background-image: url(files/background_image/25629.jpg);
 }
 body {
   background-image: var(--background-image);
@@ -25,6 +26,8 @@ body {
   background-size: cover;
   font-family: "Segoe UI", Arial, sans-serif;
   color: white;
+  overflow-y: hidden;
+  overflow-x: hidden;
 
   background-blend-mode: normal;
 }
@@ -206,6 +209,7 @@ main {
   justify-content: space-around;
   transition: all ease-in-out 1s;
 }
+
 /* there are two aside sections both of them will have this class 
 (I have taken care of the re-usability of the classes and removed redundancy) */
 .aside {
@@ -308,13 +312,21 @@ main {
 }
 /* card is the general class for the components of the latest release part */
 .card {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   transition: box-shadow ease-in-out 0.1s;
 }
 /* hovering effects for the latest release part components */
 .card:hover {
-  box-shadow: 0px 0px 2px 1px white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(16, 1, 1, 0.5),
+    rgba(20, 14, 17, 0.3) 10px
+  );
+  transition-duration: 0.3s;
 }
 /* images in the cards of the latest release section */
 .card img {
@@ -322,10 +334,13 @@ main {
   height: 100px;
   z-index: 1;
 }
+.card-child {
+  background-color: red;
+}
 /* this is the play button which will be visible only on hover */
 .play-button {
   width: 100%;
-  height: 65%;
+  height: 88%;
   position: relative;
   top: -105%;
   color: rgba(255, 255, 255, 0);
@@ -406,6 +421,7 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
   height: auto;
   top: 26vw;
   box-sizing: border-box;
+  /* background-color:red; */
 }
 /* container of the popular artists */
 .popular-artist-content {
@@ -413,6 +429,7 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  /* background-color:green; */
 }
 /* images in the popular artists section */
 .popular-artists div a img {
@@ -421,6 +438,7 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
   min-height: 60px;
   height: 10vw;
   border-radius: 50%;
+  margin: 10px;
 }
 /* content of the container in popular artists section */
 .popular-artists > div {
@@ -451,6 +469,7 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
   border-radius: 50%;
   background-color: rgb(0, 0, 0);
   opacity: 0;
+  margin: 10px;
   transition: opacity ease-in-out 0.1s;
 }
 /* additional icons in this section */
@@ -462,9 +481,13 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
 } /* added hovering effects */
 .popular-artist-content a div div:hover {
   opacity: 0.5;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
 }
 .popular-artist-content a div div:hover i {
   opacity: 1;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
 }
 /* text portion in popular artists section */
 .popular-artists div p {
@@ -474,11 +497,13 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
 .music-themes {
   position: relative;
   top: 28vw;
-  width: 100%;
+  width: 99.5%;
   height: auto;
+  margin-right: 10px;
   box-sizing: border-box;
   background-attachment: fixed;
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-image: var(--music-themes-background-image);
   /* display: flex;
   flex-direction: row;
@@ -496,9 +521,9 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
   align-items: center;
   box-sizing: border-box;
   background-image: repeating-linear-gradient(
-    to top,
+    to right,
     rgba(16, 1, 1, 0.5),
-    rgba(249, 11, 11, 0.3) 10px
+    rgba(20, 14, 17, 0.3) 10px
   );
 }
 /* stations */
@@ -555,6 +580,7 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
   width: 8vw;
   text-align: center;
   border-radius: 100%;
+  cursor: pointer;
 }
 /* text within the themes section */
 .theme-content p {
@@ -603,8 +629,9 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  /* background-color: red; */
 }
 /* this outer div contains the inner div and the image and text */
 .outer-div {
@@ -613,7 +640,8 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
   overflow: hidden;
   min-width: 123px;
   min-height: 82px;
-  margin: 5px;
+  margin: 0px;
+  margin-right: 5px;
   cursor: pointer;
 }
 /* inner div portion */
@@ -648,6 +676,10 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
 }
 .outer-div:hover .inner-div span {
   transform: scale(0.75);
+}
+.outer-div:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+  transition-duration: 0.3s;
 }
 .inner-div::before {
   content: "";
@@ -869,7 +901,13 @@ hr {
 }
 /* playlist items hovering effect */
 .playlist-item:hover {
-  box-shadow: 0px 0px 2px 1px white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(16, 1, 1, 0.5),
+    rgba(20, 14, 17, 0.3) 10px
+  );
+  transition-duration: 0.3s;
 }
 /* playlist item image */
 .playlist-item img {
@@ -886,19 +924,30 @@ hr {
 /* Footer section starts here*/
 /* this is the container for the whole footer */
 footer {
-  position: absolute;
-  bottom: 1px;
   width: 100%;
   height: 60px;
-  background-color: #282828;
-  display: flex;
+  background-attachment: fixed;
+  background-size: contain;
+  background-image: var(--music-themes-background-image);
+}
+.footer-child {
+  position: absolute;
+  width: 100%;
+  height: 60px;
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
   flex-wrap: nowrap;
+  display: flex;
   padding: 0px 3%;
   box-sizing: border-box;
   z-index: 6;
+  float: left;
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(16, 1, 1, 0.5),
+    rgba(20, 14, 17, 0.3) 10px
+  );
 }
 /* footer is divided into 3 parts */
 /* 1. first part of the footer */
@@ -910,6 +959,7 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  /* background-color: red; */
 }
 /* the current song which is being played, this is the image container for that. */
 #song-image {
@@ -922,6 +972,30 @@ footer {
 #song-image img {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
+  -webkit-animation: active-song-rotate 2s linear infinite;
+  animation: active-song-rotate 2s linear infinite;
+  animation-timing-function: ease-in-out;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes active-song-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes active-song-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 /* heart and ban icon */
 .heart-and-ban-icon {
