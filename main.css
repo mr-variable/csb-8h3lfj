@@ -15,7 +15,7 @@
   /* --background-image: linear-gradient(90deg,#21D4FD, #B721FF); */
   /* --background-image:url("background_image/2725544.jpg"); */
   /* triend all the above gradients, finally liked the gradient vectored image */
-  --background-image: url(files/background_image/2725544.jpg);
+  --background-image: url(files/background_image/polygons.jpg);
   --music-themes-background-image: linear-gradient(
     90deg,
     #833ab4,
@@ -26,8 +26,19 @@
 body {
   background-image: var(--background-image);
   margin: 0px;
+  background-attachment: fixed;
+  background-size: cover;
   font-family: "Segoe UI", Arial, sans-serif;
   color: white;
+
+  background-blend-mode: normal;
+}
+.parent {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(46, 64, 83, 0.8),
+    rgba(214, 219, 223, 0.5) 10px
+  );
 }
 /* removing margin for all the textual elements */
 h1,
@@ -241,7 +252,9 @@ main {
 .carousel img {
   height: 15vw;
   width: 22.5vw;
-  transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
+  transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition-duration: 1s;
+  transition-delay: 0.1s;
 }
 /* first image in the carousel */
 /* if you see it direction wise, then it is the third image in the carousel */
