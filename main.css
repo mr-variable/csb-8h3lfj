@@ -29,7 +29,7 @@ body {
   background-blend-mode: normal;
 }
 .parent {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   margin: 0px;
   background-image: repeating-linear-gradient(
