@@ -927,7 +927,7 @@ footer {
   width: 100%;
   height: 60px;
   background-attachment: fixed;
-  background-size: contain;
+  background-size: cover;
   background-image: var(--music-themes-background-image);
 }
 .footer-child {
