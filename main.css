@@ -16,12 +16,7 @@
   /* --background-image:url("background_image/2725544.jpg"); */
   /* triend all the above gradients, finally liked the gradient vectored image */
   --background-image: url(files/background_image/polygons.jpg);
-  --music-themes-background-image: linear-gradient(
-    90deg,
-    #833ab4,
-    #fd1d1d,
-    #fcb045
-  );
+  --music-themes-background-image: url(file/background-image/329327.jpg);
 }
 body {
   background-image: var(--background-image);
@@ -34,6 +29,9 @@ body {
   background-blend-mode: normal;
 }
 .parent {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
   background-image: repeating-linear-gradient(
     to right,
     rgba(46, 64, 83, 0.8),
@@ -235,7 +233,7 @@ main {
   position: relative;
   left: 8vw;
   margin-top: 5%;
-  transition: all ease-in-out 1s;
+  transition: all ease-in-out;
 }
 /* carousel */
 .carousel {
@@ -253,8 +251,9 @@ main {
   height: 15vw;
   width: 22.5vw;
   transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition-duration: 1s;
-  transition-delay: 0.1s;
+  /* transition: all ease-in-out; */
+  transition-duration: 0.5s;
+  /* transition-delay: 0.1s; */
 }
 /* first image in the carousel */
 /* if you see it direction wise, then it is the third image in the carousel */
@@ -479,12 +478,26 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
   height: auto;
   box-sizing: border-box;
   background-image: var(--music-themes-background-image);
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; */
+}
+.music-themes-child {
+  /* background-image: var(--music-themes-background-image); */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  background-image: repeating-linear-gradient(
+    to top,
+    rgba(16, 1, 1, 0.5),
+    rgba(249, 11, 11, 0.3) 10px
+  );
 }
 /* stations */
 .stations {
