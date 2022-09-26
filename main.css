@@ -951,6 +951,9 @@ footer {
   justify-content: center;
   flex-wrap: nowrap;
 }
+.footer-image {
+  background-color: red;
+}
 /* controls is the container for all the center controls of the player */
 .controls {
   width: 40%;
