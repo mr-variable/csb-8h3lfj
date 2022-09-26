@@ -16,7 +16,7 @@
   /* --background-image:url("background_image/2725544.jpg"); */
   /* triend all the above gradients, finally liked the gradient vectored image */
   --background-image: url(files/background_image/polygons.jpg);
-  --music-themes-background-image: url(file/background-image/329327.jpg);
+  --music-themes-background-image: url(files/background_image/329327.jpg);
 }
 body {
   background-image: var(--background-image);
@@ -477,6 +477,8 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
   width: 100%;
   height: auto;
   box-sizing: border-box;
+  background-attachment: fixed;
+  background-size: contain;
   background-image: var(--music-themes-background-image);
   /* display: flex;
   flex-direction: row;
